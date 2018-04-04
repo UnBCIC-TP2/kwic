@@ -28,7 +28,6 @@ object MainProgram extends CliMain[Unit] (
     }
     // export the result as a KWIC.
     for(w <- im.sortedWords) {
-
       im.occurrencesOfWord(w).foreach({
         case (line, pos) => println(WordShift.shift(line.split(' ').toList, pos, 0).mkString(" "))
       })
